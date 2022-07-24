@@ -1,0 +1,15 @@
+<div class="alert alert-danger" *ngIf="error" style="text-align: center">
+    <p>{{errorTime}}</p>
+    <p>{{error}}</p>
+</div>
+<form #EditDepartmentForm="ngForm" (ngSubmit)="onUpdate(EditDepartmentForm)">
+    <div class="form-group p-2">
+        <label for="name">Название</label>
+        <input type="text" [(ngModel)]="department.name"  id="name" required class="form-control" ngModel name="name" />
+    </div>
+        <div class="me-auto p-2">
+        <button class="btn btn-primary" type="submit" [disabled]="!EditDepartmentForm.valid">
+            Update
+        </button>
+    </div>
+</form>
